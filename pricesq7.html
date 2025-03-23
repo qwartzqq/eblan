@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#000',
+                        foreground: '#fff',
+                        primary: '#FFA95C',
+                        muted: '#888',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        };
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+body {
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(10, 10, 10, 1) 100%);
+    position: relative;
+}
+
+        
+        
+    
+
+.endway-text {
+    background: linear-gradient(45deg, #FFFF00 0%, #FF4F00 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text, border-box;
+    letter-spacing: .20em;
+    font-weight: 600;
+    font-family: monospace;
+    animation: smoothEndway 3s linear infinite;
+    background-size: 300%, 12em 6em;
+    border: 4px solid transparent;
+    border-image: linear-gradient(to right, #FFFF00 0%, #FF4F00 100%);
+    border-radius: 8px;
+    text-shadow: 0 0 100px #FFFF00, 0 0 41px #FF4F00, 0 0 60px #FFFF00, 0 0 9px #FF4F00;
+}
+
+   
+        
+        
+        .faq-section {
+            margin: 4rem auto 0;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 213, 255, 0.2);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 213, 255, 0.2);
+            border-color: #00d5ff;
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            color: #FFA95C;
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .faq-question::before {
+            content: "?";
+            position: absolute;
+            left: 0;
+            color: #00d5ff;
+            font-weight: 700;
+            text-shadow: 0 0 10px #00d5ff;
+        }
+
+        .faq-answer {
+            color: #888;
+            padding-left: 30px;
+            border-left: 2px solid rgba(0, 213, 255, 0.3);
+        }
+
+        
+    </style>
+</head>
+<body class="flex min-h-screen items-center justify-center bg-background text-foreground p-4">
+    <main class="text-center space-y-8 max-w-3xl">
+        <h1 class="text-4xl font-bold sm:text-5xl md:text-6xl relative">
+            Прайс <span class="endway-text">CveFinder</span>
+        </h1>
+
+        <p class="text-lg sm:text-xl text-muted">
+            Весь прайс можно найти <span class="link-container">здесь</span>
+        </p>
+
+        
+        <section class="faq-section">
+		            <div class="faq-item">
+                <h3 class="faq-question">Приватка</h3>
+				<p class="faq-answer">3 дня (тест) - 10$</p>
+                <p class="faq-answer">Неделя - 15$</p>
+				<p class="faq-answer">1 Месяц - 40$</p>
+				<p class="faq-answer">3 месяца - 100$</p>
+				<p class="faq-answer">6 месяцев - 150$</p>
+				<p class="faq-answer">Навсегда - 200$</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">Аккаунты</h3>
+                <p class="faq-answer">Другие сервсы - от 1$ (+опт)</p>
+				<p class="faq-answer">Tunnelbear VPN - 2$</p>
+				<p class="faq-answer">Surfeasy VPN - 0.5$</p>
+				<p class="faq-answer">Nord VPN - 1$</p>
+				<p class="faq-answer">Cyberghost VPN - 2$</p>
+				<p class="faq-answer">Windscribe VPN - 1$</p>
+				<p class="faq-answer">Mullvad VPN - 2.5$</p>
+				<p class="faq-answer">HMA VPN - 2$</p>
+				<p class="faq-answer">Pure VPN - 0.5$</p>
+				<p class="faq-answer">Crunchyroll - 2$</p>
+				<p class="faq-answer">Http/Https/Socks5/Socks4 Proxy - от 0.5$ за 1</p>
+				<p class="faq-answer">Hotmail - 3$ за 100</p>
+				<p class="faq-answer">Gmail - 10$ за 100</p>
+				<p class="faq-answer">Netflix - 2$ за 1</p>
+				<p class="faq-answer">Номера под регу тг - от 0.5$</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 class="faq-question">Софты</h3>
+                <p class="faq-answer">Другие софты - от 1$</p>
+				<p class="faq-answer">CC Checker сурсы - 100$</p>
+				<p class="faq-answer">Steam checker - 70$ навсегда</p>
+				<p class="faq-answer">Google/hotmail/netflix checker - 40$ навсегда</p>
+				<p class="faq-answer">CC Checker - 30$ навсегда</p>
+            </div>
+
+			<div class="faq-item">
+                <h3 class="faq-question">Услуги</h3>
+                <p class="faq-answer">Написание скрипта - 5$~50$</p>
+				<p class="faq-answer">Беспл. период на сайтах - 5% от фулл прайса</p>
+				<p class="faq-answer">Восстановление аккаунта - 5$~10$</p>
+				<p class="faq-answer">Снятие спамблока - 2$~4$</p>
+            </div>
+
+           
+        </section>
+    </main>
+<div class="fixed bottom-0 left-0 right-0 text-center py-4 z-20">
+    <p class="text-xs text-gray-400 hover:text-gray-300 transition-colors">
+       by: Cvefinder
+    </p>
+</div>
+</body>
+</html>
