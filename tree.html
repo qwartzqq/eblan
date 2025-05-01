@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CveFinder Link Tree</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#000',
+                        foreground: '#fff',
+                        primary: '#FFA95C',
+                        muted: '#888',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        };
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(10, 10, 10, 1) 100%);
+            position: relative;
+            min-height: 100vh;
+            padding-bottom: 60px;
+        }
+
+        .endway-text {
+            background: linear-gradient(45deg, #FFFF00 0%, #FF4F00 100%);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            letter-spacing: .20em;
+            font-weight: 600;
+            font-family: monospace;
+            text-shadow: 0 0 100px #FFFF00, 0 0 41px #FF4F00, 0 0 60px #FFFF00, 0 0 9px #FF4F00;
+        }
+
+        .forum-item {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 169, 92, 0.2);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+        }
+
+        .forum-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(255, 169, 92, 0.2);
+            border-color: #FFA95C;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .forum-link {
+            color: #FFA95C;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 500;
+            width: 100%;
+            padding: 0.5rem;
+        }
+
+        .forum-link:hover {
+            color: #fff;
+        }
+
+        #moreLinks {
+            background: linear-gradient(45deg, rgba(255, 169, 92, 0.1), rgba(255, 169, 92, 0.2));
+            border: 2px solid rgba(255, 169, 92, 0.3);
+            margin-top: 1rem;
+        }
+
+        #moreLinks:hover {
+            background: linear-gradient(45deg, rgba(255, 169, 92, 0.2), rgba(255, 169, 92, 0.3));
+            border-color: rgba(255, 169, 92, 0.5);
+        }
+
+        .social-links {
+            height: 0;
+            overflow: hidden;
+            transition: height 0.3s ease-out;
+            opacity: 0;
+        }
+
+        .social-links.show {
+            height: auto;
+            opacity: 1;
+            margin-top: 1rem;
+        }
+
+        .toggle-icon {
+            transition: transform 0.3s ease;
+            margin-left: 8px;
+        }
+
+        .rotate-icon {
+            transform: rotate(180deg);
+        }
+
+        .social-item {
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-links.show .social-item {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .social-item:nth-child(1) { transition-delay: 0.1s; }
+        .social-item:nth-child(2) { transition-delay: 0.2s; }
+        .social-item:nth-child(3) { transition-delay: 0.3s; }
+    </style>
+</head>
+<body class="bg-background text-foreground">
+    <main class="text-center space-y-6 max-w-3xl mx-auto p-6">
+        <h1 class="text-4xl font-bold sm:text-5xl md:text-6xl relative mt-12">
+            CveFinder <span class="endway-text">Link Tree</span>
+        </h1>
+
+        <p class="text-lg sm:text-xl text-muted mb-8">
+            Welcome to CveFinder's Link Tree
+        </p>
+
+        <div class="space-y-4">
+            <a href="https://patched.to/User/cvefinder" class="forum-item" target="_blank" rel="noopener noreferrer">
+                <span class="forum-link">Patched</span>
+            </a>
+
+            <a href="https://endway.org/members/sqan7.17610/" class="forum-item" target="_blank" rel="noopener noreferrer">
+                <span class="forum-link">EndWay</span>
+            </a>
+
+            <a href="https://cracked.sh/sqan7" class="forum-item" target="_blank" rel="noopener noreferrer">
+                <span class="forum-link">Cracked</span>
+            </a>
+
+            <a href="https://xss.is" class="forum-item" target="_blank" rel="noopener noreferrer">
+                <span class="forum-link">Xss</span>
+            </a>
+
+            <!-- More Links Button -->
+            <button id="moreLinks" class="forum-item">
+                <span class="forum-link">
+                    More Links
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </span>
+            </button>
+
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="http://t.me/cvefinder" class="forum-item social-item" target="_blank" rel="noopener noreferrer">
+                    <span class="forum-link">
+                        <i class="fab fa-telegram mr-2"></i>
+                        Telegram
+                    </span>
+                </a>
+                <a href="https://t.me/+APVc6_okxpJiYTgy" class="forum-item social-item" target="_blank" rel="noopener noreferrer">
+                    <span class="forum-link">
+                        <i class="fas fa-users mr-2"></i>
+                        Channel
+                    </span>
+                </a>
+                <a href="http://t.me/reviews_sqan7" class="forum-item social-item" target="_blank" rel="noopener noreferrer">
+                    <span class="forum-link">
+                        <i class="fas fa-star mr-2"></i>
+                        Vouches
+                    </span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <div class="fixed bottom-0 left-0 right-0 text-center py-4 z-20 bg-background">
+        <p class="text-xs text-gray-400 hover:text-gray-300 transition-colors">
+            by: CveFinder
+        </p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const moreLinks = document.getElementById('moreLinks');
+            const socialLinks = document.querySelector('.social-links');
+            const toggleIcon = document.querySelector('.toggle-icon');
+
+            moreLinks.addEventListener('click', function() {
+                socialLinks.classList.toggle('show');
+                toggleIcon.classList.toggle('rotate-icon');
+                
+                // Set explicit height for animation
+                if (socialLinks.classList.contains('show')) {
+                    const height = socialLinks.scrollHeight;
+                    socialLinks.style.height = height + 'px';
+                } else {
+                    socialLinks.style.height = '0';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
